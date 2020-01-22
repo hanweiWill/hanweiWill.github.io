@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="title: Learning note of Transformerdate: 2020-01-22 14:28:27tags: nlp Learning Transformertoc: trueLearning Transformer Questions when reading the paper\subsection{1. how is self attention calculated">
+<meta name="description" content="title: Learning note of Transformerdate: 2020-01-22 14:28:27tags: nlp Learning Transformertoc: trueLearning Transformer Questions when reading the paper{\Large 1. how is self attention calculated}{\l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Transformer">
 <meta property="og:url" content="http://yoursite.com/2020/01/22/Transformer/index.html">
 <meta property="og:site_name" content="CV&amp;NLP">
-<meta property="og:description" content="title: Learning note of Transformerdate: 2020-01-22 14:28:27tags: nlp Learning Transformertoc: trueLearning Transformer Questions when reading the paper\subsection{1. how is self attention calculated">
+<meta property="og:description" content="title: Learning note of Transformerdate: 2020-01-22 14:28:27tags: nlp Learning Transformertoc: trueLearning Transformer Questions when reading the paper{\Large 1. how is self attention calculated}{\l">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-22T06:28:27.763Z">
-<meta property="article:modified_time" content="2020-01-22T08:34:21.343Z">
+<meta property="article:modified_time" content="2020-01-22T08:40:56.801Z">
 <meta property="article:author" content="Will">
 <meta name="twitter:card" content="summary">
 
@@ -322,7 +322,7 @@
         <hr>
 <p>title: Learning note of Transformer<br>date: 2020-01-22 14:28:27<br>tags: nlp</p>
 <h2 id="Learning-Transformer"><a href="#Learning-Transformer" class="headerlink" title="Learning Transformer"></a>Learning Transformer</h2><p>toc: true<br>Learning Transformer</p>
-<p>Questions when reading the paper<br>\subsection{1. how is self attention calculated}<br>\paragraph{single-head self attention}<br>$X=[x_1..x_i..x_n]$: [n*d] input word embedding vectors at position i\\<br>$W_q, W_k, W_v$: [d<em>h] h is the embedding dimension of Q, K, V\\<br>calculate attention weight $a_i=softmax(column-wise dot product(x_i</em>W_q, X<em>W_k))$: [n]=[d][d</em>h]\dot[n<em>d][d</em>h]\\<br>calculate attention vector as weighted sum $z_i=sum(a_i,X<em>W_v): [h]=weighted sum([n], [n</em>d][d<em>h])\\<br>$Z=[z_1..z_i..z_n]: [n</em>h] \\<br>\paragraph{multihead attention}<br>assume we use m heads, each corresponding to a set of $W_q,W_k,W_v$, each calculated separately to get $Z^1…Z^m$: [n<em>h]</em>m\\<br>concatenate Z into a large vector $ZZ=[Z^1..Z^m]$: [n<em>hm]\\<br>$output=ZZ</em>W_o$ [n<em>d]=[n</em>hm][hm*d] which is the same dimension as input X to do the residule addition.\\</p>
+<p>Questions when reading the paper<br>{\Large 1. how is self attention calculated}<br>{\large single-head self attention}<br>$X=[x_1..x_i..x_n]$: [n*d] input word embedding vectors at position i\\<br>$W_q, W_k, W_v$: [d*h] h is the embedding dimension of Q, K, V\\<br>calculate attention weight $a_i=softmax(column-wise dot product(x_i*W_q, X*W_k))$: [n]=[d][d*h]\dot[n*d][d*h]\\<br>calculate attention vector as weighted sum $z_i=sum(a_i,X*W_v): [h]=weighted sum([n], [n*d][d*h])\\<br>$Z=[z_1..z_i..z_n]: [n*h] \\<br>{\large multihead attention}<br>assume we use m heads, each corresponding to a set of $W_q,W_k,W_v$, each calculated separately to get $Z^1…Z^m$: [n*h]*m\\<br>concatenate Z into a large vector $ZZ=[Z^1..Z^m]$: [n*hm]\\<br>$output=ZZ*W_o$ [n*d]=[n*hm][hm*d] which is the same dimension as input X to do the residule addition.\\</p>
 <ol>
 <li>why self-attention works</li>
 </ol>
