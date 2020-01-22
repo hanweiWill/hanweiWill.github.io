@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="title: Learning note of Transformerdate: 2020-01-22 14:28:27tags: nlptoc: truemathjax:true Learning TransformerQuestions when reading the paper how is attention calculated$X&#x3D;{x_1…x_i…x_n}$: input wor">
+<meta name="description" content="title: Learning note of Transformerdate: 2020-01-22 14:28:27tags: nlptoc: true mathjax:true\section{Learning Transformer}Questions when reading the paper\subsection{1. how is self attention calculate">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Transformer">
 <meta property="og:url" content="http://yoursite.com/2020/01/22/Transformer/index.html">
 <meta property="og:site_name" content="CV&amp;NLP">
-<meta property="og:description" content="title: Learning note of Transformerdate: 2020-01-22 14:28:27tags: nlptoc: truemathjax:true Learning TransformerQuestions when reading the paper how is attention calculated$X&#x3D;{x_1…x_i…x_n}$: input wor">
+<meta property="og:description" content="title: Learning note of Transformerdate: 2020-01-22 14:28:27tags: nlptoc: true mathjax:true\section{Learning Transformer}Questions when reading the paper\subsection{1. how is self attention calculate">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-22T06:28:27.763Z">
-<meta property="article:modified_time" content="2020-01-22T07:20:32.120Z">
+<meta property="article:modified_time" content="2020-01-22T08:13:30.809Z">
 <meta property="article:author" content="Will">
 <meta name="twitter:card" content="summary">
 
@@ -320,12 +320,10 @@
 
       
         <hr>
-<p>title: Learning note of Transformer<br>date: 2020-01-22 14:28:27<br>tags: nlp<br>toc: true<br>mathjax:true</p>
-<h1 id="Learning-Transformer"><a href="#Learning-Transformer" class="headerlink" title="Learning Transformer"></a>Learning Transformer</h1><h2 id="Questions-when-reading-the-paper"><a href="#Questions-when-reading-the-paper" class="headerlink" title="Questions when reading the paper"></a>Questions when reading the paper</h2><ol>
-<li><p>how is attention calculated<br>$X={x_1…x_i…x_n}$: input word embedding vectors at position i<br>$W_x$</p>
-</li>
-<li><p>why self-attention works</p>
-</li>
+<p>title: Learning note of Transformer<br>date: 2020-01-22 14:28:27<br>tags: nlp<br>toc: true</p>
+<h2 id="mathjax-true"><a href="#mathjax-true" class="headerlink" title="mathjax:true"></a>mathjax:true</h2><p>\section{Learning Transformer}<br>Questions when reading the paper<br>\subsection{1. how is self attention calculated}<br>\paragraph{single-head self attention}<br>$X=[x_1..x_i..x_n]$: [n<em>d] input word embedding vectors at position i\\<br>$W_q, W_k, W_v$: [d</em>h] h is the embedding dimension of Q, K, V\\<br>calculate attention weight $a_i=softmax(column-wise dot product(x_i<em>W_q, X</em>W_k))$: [n]=[d][d<em>h]\dot[n</em>d][d<em>h]\\<br>calculate attention vector as weighted sum $z_i=sum(a_i,X</em>W_v): [h]=weighted sum([n], [n<em>d][d</em>h])\\<br>$Z=[z_1..z_i..z_n]: [n<em>h] \\<br>\paragraph{multihead attention}<br>assume we use m heads, each corresponding to a set of $W_q,W_k,W_v$, each calculated separately to get $Z^1…Z^m$: [n</em>h]<em>m\\<br>concatenate Z into a large vector $ZZ=[Z^1..Z^m]$: [n</em>hm]\\<br>$output=ZZ<em>W_o$ [n</em>d]=[n<em>hm][hm</em>d] which is the same dimension as input X to do the residule addition.\\</p>
+<ol>
+<li>why self-attention works</li>
 </ol>
 
       
@@ -473,7 +471,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Learning-Transformer"><span class="nav-number">1.</span> <span class="nav-text">Learning Transformer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions-when-reading-the-paper"><span class="nav-number">1.1.</span> <span class="nav-text">Questions when reading the paper</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mathjax-true"><span class="nav-number">1.</span> <span class="nav-text">mathjax:true</span></a></li></ol></div>
             
 
           </div>
